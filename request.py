@@ -29,3 +29,23 @@ def get_source(category):
             source_articles = process_articles(source_articles_list)
 
     return source_articles
+
+
+def process_articles(source_list):
+    '''
+    Function  that processes the source article and transform them to a list of Objects
+
+    Args:
+        source_list: A list of dictionaries that contain source details
+
+    Returns :
+        source_articles: A list of source objects
+    '''
+    source_articles = []
+    for source_item in source_list:
+        id = source_item.get('id')
+        name = source_item.get('name')
+        title = source_item.get('title')
+    
+
+    return source_articles
