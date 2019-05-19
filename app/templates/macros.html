@@ -1,8 +1,25 @@
 {% macro displaySourceList(source_list) %}
+<div class="row m-0 p-o">
+    <div class="col-md-12 m-0 p-o">
+        {% for item in source_list %}
 
-{% for item in source_list %}
-<li>{{ item.name}}</li>
-<li>{{item.description}}</li>
-{% endfor %}
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 m-0 p-o">
+            <div class="content_area">
+                <div class="main_content floatleft">
+                    <div class="left_coloum floatleft">
+                        <div class="single_left_coloum_wrapper">
+                            <h2 class="title">{{item.name}}</h2>
+                            <div class="single_left_coloum floatleft">
+                                <p>{{item.description| truncate(100)}}</p>
 
-{% endmacro %}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {%endfor %}
+    </div>
+</div>
+{%endmacro%}
