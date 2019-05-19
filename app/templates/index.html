@@ -4,16 +4,18 @@
 <!-- Content block -->
 {% block content %}
 
-<body>
+<h3>News Highlights</h3>
 
-    <h3> Online News Channels</h3>
-    <ul>
-        {{macro.displaySourceList(sports)}}
+<div class="row m-0 p-o">
+    <div class="col-md-8 m-0 p-o">
+        <ul>
+            {{macro.displaySourceList(sports)}}
 
-    </ul>
+        </ul>
 
-    <ul>
-        {{macro.displaySourceList(entertainment)}}
-    </ul>
-</body>
+        <ul>
+            {{macro.displaySourceList(entertainment)}}
+        </ul>
+    </div>
+</div>
 {% endblock%}
