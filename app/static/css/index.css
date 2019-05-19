@@ -1,0 +1,12 @@
+img {
+ width: 60%;   
+ height: 40%;
+}
+
+h1{
+    font-size: 40px;
+}
+
+.col-md-6{
+border: 2px solid black
+}
