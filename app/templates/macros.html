@@ -1,26 +1,20 @@
-{% macro displaySourceList(source_list) %}
-
+{% macro displaySourceList(source_list) %}            
 <div class="container">
-    <div class="row small-up-3 medium-up-4 large-up-5">
-        {% for item in source_list %}
-        
-        <div class="col-md-6">
+    {% for item in source_list %}
+    <div class=" col-xs-12 col-sm-4 col-md-4 col-lg-4 m-0 p-o news-card">
+        <div class="left_coloum floatleft">
+            <div class="single_left_coloum_wrapper">
+                <img src="{{ item.urlToImage}}" alt="{{ item.title }} poster" class="img-responsive">
 
-            <p><span><i class="fi-torso"> {{item.title}} &nbsp;&nbsp;</i></span></p>
-            <p><span><i class="fi-torso"> By {{item.author}} &nbsp;&nbsp;</i></span></p>
-            <p><span><i class="fi-descriptions"> {{item.description|truncate(60)}} &nbsp;&nbsp;</i></span></p>
-            <p><a href="#">{{item.url}}</a></p>
-            <p><span><i class="fi-date"> {{ item.publishedAt|truncate(20)}}&nbsp;&nbsp;</i></span></p>
+                <p>{{item.title}}</p>
+                <p>{{item.description}}</p>
+                <p><a href= "#">{{item.url}}</a></p>
+                <p>{{item.publishedAt}}</p>
+            </div>
         </div>
-        <div class="col-md-6">
-
-
-            <p><img src="{{item.urlToImage}}" alt=""></p>
-            
-        </div>
-    
-        {%endfor %}
-        {%endmacro%}
     </div>
-    
+    {% endfor %}
+
+    {% endmacro %}
+
 </div>

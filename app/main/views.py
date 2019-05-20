@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect,
+from flask import render_template, request, redirect
 from . import main
 from ..request import get_sources, get_source
 from ..models import Articles
@@ -42,7 +42,7 @@ def source():
     return render_template('index.html', title=title, sports=sports, technology=technology, entertainment=entertainment, business=business, general=general)
 
 
-@main.route('/source/articles')
+@main.route('/articles')
 def articles():
     '''
     View article page function that returns the article details page and its data
