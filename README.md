@@ -28,7 +28,7 @@ This an application that list and preview news articles from various sources
 | Behavior                    | Input                         | Output                                     |
 |-----------------------------|:----------------------------: | ------------------------------------------:|
 | Homepage loads              |  Data from index mark up      |  Displays all news sources                 |
-| New page loadds             |  Click in the url link        |  Redirects to the specific article page    |
+| New page loads              |  Click in the url link        |  Redirects to the specific article page    |
 
 
 ## Technologies used

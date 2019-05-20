@@ -20,7 +20,7 @@ def get_sources(category):
     '''
     Function that gets the json response to our url request
     '''
-    get_sources_url = base_url.format(category, api_key)
+    get_sources_url = base_url.format(category,api_key)
     
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
@@ -28,12 +28,12 @@ def get_sources(category):
 
         sources_results = None
 
-        if get_sources_response['articles']:
-            sources_results_list = get_sources_response['articles']
+        if get_sources_response['sources']:
+            sources_results_list = get_sources_response['sources']
          
             sources_results = process_results(sources_results_list)
-            
 
+            
     return sources_results
    
 
@@ -47,7 +47,7 @@ def process_results(source_list):
     Returns :
         sources_results: A list of source objects
     '''
-    sources_results = []
+    sources_result= []
 
     for source_item in source_list:
         id = source_item.get('id')
@@ -56,21 +56,19 @@ def process_results(source_list):
         url = source_item.get('url')
         category = source_item.get('category')
         country = source_item.get('country')
-        
-        
+      
         source_object = Source(id,name,description,url,category,country )
-        sources_results.append(source_object)
-    return sources_results
+        sources_result.append(source_object)
+    return sources_result
     
     
     
 
-def get_source(category):
+def get_source(id):
     '''
     Function that gets the json response to our url request
     '''
-    get_articles_url = article_url.format(category, api_key)
-    print(get_articles_url)
+    get_articles_url = article_url.format(id, api_key)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
@@ -80,11 +78,10 @@ def get_source(category):
         if get_articles_response['articles']:
             articles_results_list = get_articles_response['articles']
 
-            articles_results = process_results(articles_results_list)
-
+            articles_results = process_result(articles_results_list)
     return articles_results
 
-def process_results(source_list):
+def process_result(source_list):
     
     articles_results = []
 
@@ -95,6 +92,8 @@ def process_results(source_list):
         url = article_item.get('url')
         urlToImage = article_item.get('urlToImage')
         publishedAt = article_item.get('publishedAt')
+       
+
         articles_object = Articles(author,title,url,urlToImage,description,publishedAt)
         articles_results.append(articles_object)
     return articles_results

@@ -1,20 +1,27 @@
-{% macro displaySourceList(source_list) %}            
+{% macro displaySourceList(source_list) %}
+
 <div class="container">
+    
     {% for item in source_list %}
-    <div class=" col-xs-12 col-sm-4 col-md-4 col-lg-4 m-0 p-o news-card">
-        <div class="left_coloum floatleft">
-            <div class="single_left_coloum_wrapper">
-                <img src="{{ item.urlToImage}}" alt="{{ item.title }} poster" class="img-responsive">
 
-                <p>{{item.title}}</p>
-                <p>{{item.description}}</p>
-                <p><a href= "#">{{item.url}}</a></p>
-                <p>{{item.publishedAt}}</p>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
+   <div class="col-md-3">
+       <div class="card">
+           <div class="card-body">
+               <div class="card-title" id="head">
+                   <p style="font-size: 200%;">{{item.name}}</p>
+               </div>
+               <div class="text">
+                   <p>{{item.description}}</p>
+                   <br>
+                   <a href="/source/{{item.id}}"> <button class="button"> <span>News</span></button></a>
+               </div>
+           </div>
+       </div>
+   </div>
 
+   {% endfor %}
     {% endmacro %}
-
 </div>
+
+
+ 

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row" style="text-align:center">
+        
+        {%  for item in articles  %}
+       
+        <div class="col-md-8">
+            <h2>{{item.title}}</h2>
+            <img src="{{item.urlToImage}}" alt="image" width="70%">
+            <p>{{item.description}}</p>
+            <p>Created: {{item.publishedAt}}</p>
+            <a href="{{item.url}}"><span>Read More...</span></button></a>
+        </div>
+        {% endfor%}
+    </div>
+</div>
+{% endblock%}
